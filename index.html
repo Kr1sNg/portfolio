@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <script type="module" src="app.js"></script>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
@@ -101,18 +100,45 @@
             <hr class="mb-5 star-dark">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <form id="contactForm" name="sentMessage">
+                    <form
+                        id="contactForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSf44MfEybkz4D49cpXUOhGneMtSic1BFvuC7kHAbjX55WQNbQ/formResponse"
+                        method="POST"
+                        target="hidden_iframe"
+                        onsubmit="submitted=true;"
+                    >
                         <div>
-                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="text" id="name" required="" placeholder="Name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 pb-2 form-floating">
+                                <input class="form-control"
+                                    type="text"
+                                    id="name"
+                                    name="entry.473755866"
+                                    required=""
+                                    placeholder="Name">
+                                <label class="form-label">Name</label>
+                                <small class="form-text text-danger help-block"></small>
+                            </div>
                         </div>
                         <div>
-                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="email" id="email" required="" placeholder="Email Address"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 pb-2 form-floating">
+                                <input class="form-control" type="email" id="email" name="entry.1344139933" required="" placeholder="Email Address">
+                                <label class="form-label">Email Address</label>
+                                <small class="form-text text-danger help-block"></small>
+                            </div>
                         </div>
                         <div>
-                            <div class="mb-0 pb-2 form-floating"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 pb-2 form-floating">
+                                <input class="form-control" type="tel" id="phone" name="entry.860727033" required="" placeholder="Phone Number">
+                                <label class="form-label">Phone Number</label>
+                                <small class="form-text text-danger help-block"></small>
+                            </div>
                         </div>
                         <div>
-                            <div class="mb-5 pb-2 form-floating"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-5 pb-2 form-floating">
+                                <textarea class="form-control" id="message" name="entry.1205716117" required="" placeholder="Message" style="height: 150px;"></textarea>
+                                <label class="form-label">Message</label>
+                                <small class="form-text text-danger help-block"></small>
+                            </div>
                         </div>
                         <div id="success"></div>
                         <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button></div>
@@ -293,6 +319,27 @@
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/freelancer.js"></script>
+
+    <iframe
+        name="hidden_iframe"
+        style="display:none;"
+        onload="if(submitted) showSuccess();"
+    ></iframe>
+
+    <script>
+        let submitted = false
+
+        function showSuccess() {
+            const successEl = document.getElementById('success')
+            successEl.innerHTML =
+            '<div class="alert alert-success mt-3">Message sent successfully!</div>'
+            document.getElementById('contactForm').reset()
+
+            setTimeout(() => {
+                successEl.innerHTML = ''
+            }, 5000)
+        }
+    </script>
 </body>
 
 </html>
