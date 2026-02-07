@@ -222,7 +222,7 @@
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
+    <div class="modal" role="dialog" tabindex="-1" id="portfolio-modal-2">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
@@ -298,22 +298,48 @@
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
+    <div class="modal" role="dialog" tabindex="-1" id="portfolio-modal-6">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
                 <div class="modal-body">
-                    <div class="container text-center">
+                    <div class="container">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="mb-5 star-dark"><img class="img-fluid mb-5" src="assets/img/portfolio/submarine.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                <h2 class="text-uppercase text-secondary text-center mb-0">42's project of Minishell</h2>
+                                <hr class="mb-2 star-dark">
+                                <a href="https://github.com/Kr1sNg/42cursus-Minishell" target="_blank">
+                                    <img class="img-fluid mb-5 d-block mx-auto" src="assets/img/portfolio/minishell.png" alt="Minishell">
+                                </a>
+                                <p class="mb-3 text-center">Minishell is a Unix shell written in C, similar to Bash. It allows users to execute commands, handle pipes, redirections, environment variables, and signals.</p>
+                                <ul class="text-left list-disc pl-6">
+                                    <li><strong>Programming:</strong> C, Bash</li>
+                                    <li><strong>Challenge:</strong> Managing forks, pipes, file descriptors, and making sure memory was correctly freed in all cases was complex.</li>
+                                    <li><strong>Success:</strong> Obtaining the deep understanding of Linux processes, system calls, and memory management.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 d-flex justify-content-center text-center gap-3">
+                <a
+                    class="btn btn-primary btn-lg rounded-pill"
+                    href="https://github.com/Kr1sNg/42cursus-Minishell"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa fa-github"></i>&nbsp;Github
+                </a>
+
+                <a
+                    class="btn btn-primary btn-lg rounded-pill"
+                    role="button"
+                    data-bs-dismiss="modal"
+                >
+                    <i class="fa fa-close"></i>&nbsp;&nbsp;Close&nbsp;
+                </a>
+                </div>
+                <!-- <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div> -->
             </div>
         </div>
     </div>
